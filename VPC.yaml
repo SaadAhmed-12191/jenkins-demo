@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+ VpcCIDR:
+  Default: 10.0.0.0/16
+  Description: Please enter IP range for VPC CIDR block (must be of /16)
+  Type: String
+ 
+ 
+ 
+Resources:
+
+ MyVPC:
+  Type: 'AWS::EC2::VPC'
+  Properties: 
+   CidrBlock: !Ref VpcCIDR
+   Tags:
+    - Key: Name
+      Value: Saad-Jenkins-Demo-VPC
+
+
