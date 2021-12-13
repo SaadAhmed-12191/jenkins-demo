@@ -5,7 +5,7 @@ dpipeline {
      stages {
          stage('Submit Stack') {
          steps {
-         sh "aws cloudformation create-stack  --template-body file://VPC.yaml 
+              sh "echo ${VpcCIDR}"
            }
           }
          }         
