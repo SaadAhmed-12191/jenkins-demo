@@ -6,7 +6,7 @@ pipeline {
          stage('Testing') {
          steps {
               sh '''
-                 #!/bin/sh
+                 
                  aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query StackSummaries[].StackName --region us-east-1 > stacklist
                  cat stacklist
                  if [[ "$action" == "create" ]]
