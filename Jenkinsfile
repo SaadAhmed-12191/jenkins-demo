@@ -16,7 +16,7 @@ pipeline {
                       then
                          echo "Creating Stack"
                          aws cloudformation create-stack --stack-name $stack_name --region us-east-1 --template-body file://VPC.yaml --parameters ParameterKey=VpcCIDR,ParameterValue=$VpcCIDR 
-                         while [[ "$var14" != "CREATE_COMPLETE," ]]
+                         while [ "$var14" != "CREATE_COMPLETE," ]
                          do
                               aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > status
                               eval $(awk '{print "var"NR"="$2}' status) 
