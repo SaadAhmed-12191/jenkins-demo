@@ -13,13 +13,19 @@ pipeline {
                  then 
                   cat stacklist | grep "${stack_name}"
                   if [[ $? -eq 1 ]]
-                  echo "creating stack"
+                   echo "creating stack"
+                  else
+                    echo "stack with this name already exist"
+                  fi
                  elif [[ "$action" == "delete" ]]
                  then
                   cat stacklist | grep "${stack_name}"
                   if [[ $? -eq 1  ]]
                    then
                     echo "No stack with this name found"
+                  else
+                   echo "deleting stack"
+                  fi
                  fi
                 
               
