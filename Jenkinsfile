@@ -32,8 +32,8 @@ pipeline {
                   then
                     echo "Deleting Stack"
                     aws cloudformation delete-stack --stack-name $stack_name --region us-east-1
-                    else
-                         echo "Stack with this name does'nt exist"
+                  else
+                    echo "Stack with this name does'nt exist"
                     fi
                  fi
               
