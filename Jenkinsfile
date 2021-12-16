@@ -13,7 +13,7 @@ pipeline {
                  then
                     cat stacklist | grep "${stack_name}"
                     if [[ $? -eq 1 ]]
-                    then
+                      then
                          echo "Creating Stack"
                          aws cloudformation create-stack --stack-name $stack_name --region us-east-1 --template-body file://VPC.yaml --parameters ParameterKey=VpcCIDR,ParameterValue=$VpcCIDR 
                          while [[ "$var14" != "CREATE_COMPLETE," ]]
@@ -34,7 +34,7 @@ pipeline {
                     aws cloudformation delete-stack --stack-name $stack_name --region us-east-1
                   else
                     echo "Stack with this name does'nt exist"
-                    fi
+                   fi
                  fi
               
               '''
