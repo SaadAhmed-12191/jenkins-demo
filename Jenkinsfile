@@ -13,6 +13,7 @@ pipeline {
                  then 
                   cat stacklist | grep "${stack_name}"
                   if [[ $? -eq 1 ]]
+                  then
                    echo "creating stack"
                   else
                     echo "stack with this name already exist"
