@@ -18,7 +18,7 @@ pipeline {
                   else
                     echo "stack with this name already exist"
                   fi
-                 elif [[ "$action" == "delete" ]]
+                 elif [[ "$action" -eq "delete" ]]
                  then
                   cat stacklist | grep "${stack_name}"
                   if [[ $? -eq 1  ]]
