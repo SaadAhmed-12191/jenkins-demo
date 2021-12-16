@@ -9,7 +9,7 @@ pipeline {
                  #!/bin/bash
                  aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query StackSummaries[].StackName --region us-east-1 > stacklist
                  cat stacklist
-                 if [[ "$action" == "create" ]]
+                 if [[ "$action" -eq "create" ]]
                  then 
                   cat stacklist | grep "${stack_name}"
                   if [[ $? -eq 1 ]]
