@@ -12,7 +12,7 @@ pipeline {
               if [[ "$action" == create ]]
               then 
               cat stacklist | grep "${stack_name}"
-                if [[ "$action" == create ]]
+                if [[ "$stack_name" == saad ]]
                   then
                   echo "creating stack"
                 else
