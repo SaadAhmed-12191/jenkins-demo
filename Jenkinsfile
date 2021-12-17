@@ -11,7 +11,7 @@ pipeline {
               cat stacklist
               if [[ "$action" == create ]]
                then grep saad stacklist
-               echo $?
+               echo "saad"
                 
 
               fi
