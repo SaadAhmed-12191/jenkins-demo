@@ -10,8 +10,8 @@ pipeline {
                 action_var="create"
                 stack_name_var="teststack"
                 if [ "$action_var" = "create" ]; then
-                    cat stacklist | grep "${stack_name_var}"
-                    if [ $? -eq 1 ]; then
+                    result=$(cat stacklist | grep "${stack_name_var}")
+                    if [ -z $result ]; then
                         echo "creating stack"
                     else
                         echo "stack with this name already exist"
