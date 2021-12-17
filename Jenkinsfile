@@ -7,6 +7,11 @@ pipeline {
                 #!/bin/bash
                 echo "somestack" > stacklist.txt
                 cat stacklist.txt
+                stack_name="yasirstack"
+                action_name="create"
+                if [[ "$action_name" == "create" ]]; then
+                    echo "SUCCESS JOB"
+                fi
               '''
           }
         }
