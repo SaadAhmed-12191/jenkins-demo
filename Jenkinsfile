@@ -5,6 +5,7 @@ pipeline {
          steps {
               sh '''
                 #!/bin/bash
+                bash --version
                 echo "somestack" > stacklist.txt
                 cat stacklist.txt
                 stack_name="yasirstack"
