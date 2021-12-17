@@ -11,7 +11,7 @@ pipeline {
               cat stacklist
               if [[ "$action" == create ]]
                then 
-                cat stacklist | grep saad
+                grep mytesting stacklist
                 if [[ "$? == 1 ]]
                   then
                    echo "creating stack"
