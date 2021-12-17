@@ -9,10 +9,10 @@ pipeline {
                  cat stacklist
                  action_var="delete"
                  stack_name_var="something"
-                 if [ "$action_var" = "create" ]
+                 if [[ "$action_var" = "create" ]]
                   then 
                    cat stacklist | grep "${stack_name_var}"
-                   if [[ $? = 1 ]]
+                   if [[ $? -eq 1 ]]
                     then
                      echo "creating stack"
                    else
