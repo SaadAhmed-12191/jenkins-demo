@@ -12,7 +12,7 @@ pipeline {
               if [[ "$action" == create ]]
               then 
               cat stacklist | grep "${stack_name}"
-                if [[ "$?" -eq 1 ]]
+                if [[ "$?" -eq "1" ]]
                   then
                   echo "creating stack"
                 else
