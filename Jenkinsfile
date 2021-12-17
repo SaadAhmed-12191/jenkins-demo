@@ -12,13 +12,8 @@ pipeline {
               if [[ "$action" == create ]]
               then 
               cat stacklist | grep "${stack_name}"
-                if [[ "$stack_name" == saad ]]
-                  then
-                  echo "creating stack"
-                else
-                  echo "stack with this name already exist"
-                fi
-              
+               
+              echo "ok now"
               fi
 
               '''
