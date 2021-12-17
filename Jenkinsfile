@@ -6,8 +6,7 @@ pipeline {
               sh '''
                
               #!/bin/bash
-              stack_name=mytesting
-              action=delete
+              
               aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query StackSummaries[].StackName --region us-east-1 > stacklist
               cat stacklist
               if [[ "$action" == create ]]
