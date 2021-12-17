@@ -11,8 +11,6 @@ pipeline {
               cat stacklist
               if [[ "$action" == create ]]
                then 
-                cat stacklist | grep "${stack_name}"
-               
                 echo "ok now"
               fi
 
