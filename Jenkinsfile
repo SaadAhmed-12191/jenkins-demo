@@ -16,13 +16,6 @@ pipeline {
                     else
                         echo "stack with this name already exist"
                     fi
-//                 elif [ "$action_var" = "delete" ]; then
-//                     cat stacklist | grep "${stack_name_var}"
-//                     if [ $? = 1  ]; then
-//                         echo "No stack with this name found"
-//                     else
-//                         echo "deleting stack"
-//                     fi
                 fi
               '''
           }
