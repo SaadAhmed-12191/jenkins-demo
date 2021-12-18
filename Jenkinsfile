@@ -7,7 +7,7 @@ pipeline {
                
               #!/bin/bash
               cat stacklist 
-              cat stacklist | grep "${stack_name}"
+              cat stacklist | grep "${stack_name}" | true
               echo $?
 
               '''
