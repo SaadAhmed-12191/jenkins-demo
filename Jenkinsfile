@@ -6,8 +6,12 @@ pipeline {
               sh '''
                
               #!/bin/bash
-              aws cloudformation describe-stacks --stack-name mytesting --region us-east-1
-              echo $?
+              aws cloudformation describe-stacks --stack-name $stackname --region us-east-1
+              if [[ "$?" == 0  ]]
+               then echo "stack already exist"
+              else
+               echo "creating stack"
+              fi
 
               '''
           }
