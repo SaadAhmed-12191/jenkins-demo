@@ -6,6 +6,7 @@ pipeline {
               sh '''
                
               #!/bin/bash
+              set -e
               echo "saad"
               aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query StackSummaries[].StackName --region us-east-1 > stacklist
               cat stacklist
