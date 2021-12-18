@@ -13,6 +13,8 @@ pipeline {
                then cat stacklist | grep mytesting
                if [[ "$?" -eq 1 ]]
                 then echo "saad"
+               else echo "ahmed"
+               fi
                 
 
               fi
