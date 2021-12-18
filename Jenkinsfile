@@ -6,7 +6,7 @@ pipeline {
               sh '''
                
               #!/bin/bash
-              aws cloudformation describe-stacks --stack-name myteststack
+              aws cloudformation describe-stacks --stack-name myteststack --region us-east-1
 
               '''
           }
