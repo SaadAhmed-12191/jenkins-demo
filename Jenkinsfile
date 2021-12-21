@@ -8,6 +8,7 @@ pipeline {
               #!/bin/bash
               sudo apt-get update
               sudo apt-get install jq
+              echo "installation completed"
 
                
               
