@@ -5,10 +5,10 @@ pipeline {
          steps {
               sh '''
                
-               mkdir saad
+               mkdir saadi
                ls
-               [ -d "/saad" ] && echo "Folder exist"
-               [ -d "/saad/saad" ] && echo "Folder exist" || echo "Folder does'nt exist"
+               [ -d "/saadi" ] && echo "Folder exist"
+               [ -d "/saadi/saad" ] && echo "Folder exist" || echo "Folder does'nt exist"
               
 
               '''
