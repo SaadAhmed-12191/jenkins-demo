@@ -15,6 +15,8 @@ pipeline {
                  if [[ "$var" == '"ROLLBACK_IN_PROGRESS"' ]]
                   echo "Stack has been rolled back"
                   break
+                 else
+                  echo "going"
                  fi
                 done
 
