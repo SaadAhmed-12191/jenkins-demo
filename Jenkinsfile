@@ -11,7 +11,7 @@ pipeline {
               #aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query StackSummaries[].StackName --region us-east-1  > stacklist.json 
               
               #var=$(cat stacklist.json | jq '.StackSummaries | .[].Parameters')
-              var2=$(cat status.json | jq '.Stacks | .[].StackStatus')
+              var2=$(cat status.json | jq '.Stacks | .[].Parameters')
               #echo $var
               echo $var2
 
