@@ -13,7 +13,7 @@ pipeline {
                     
                    
               elif [[ "$action" == delete ]]
-               then [ -d "cat stacklist | grep "${stack_name}"" ] && echo "deleting" || echo "============ !!!! No such stack exist !!!! ============"
+               then cat stacklist | grep "${stack_name}" && echo "deleting" || echo "============ !!!! No such stack exist !!!! ============"
                     
               fi
 
