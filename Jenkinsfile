@@ -15,10 +15,8 @@ pipeline {
                 done    
                    
               elif [[ "$action" == delete ]]
-              then cat stacklist | grep "${stack_name}"
-                    if [[ $? -eq 0 ]]; then echo "Deleting Stack"; aws cloudformation delete-stack --stack-name $stack_name --region us-east-1 ;  
-                    else echo "Stack with this name does'nt exist"
-                    fi
+               then [ cat stacklist | grep "${stack_name}" ] && jq --version || echo "============ !!!! No such stack exist !!!! ============"
+                    
               fi
 
 
