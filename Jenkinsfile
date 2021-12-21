@@ -5,8 +5,7 @@ pipeline {
          steps {
               sh '''
                
-               mkdir saadi
-               ls
+              
                [ -d "/saadi" ] && echo "Folder exist"
                
               
