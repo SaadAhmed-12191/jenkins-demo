@@ -13,7 +13,7 @@ pipeline {
                     
                    
               elif [[ "$action" == delete ]]
-               then cat stacklist | grep "${stack_name}" && echo "deleting stack"; echo "this is a version of JQQ"  || echo "============ !!!! No such stack exist !!!! ============"
+               then cat stacklist | grep "${stack_name}" && echo "deleting stack"  || echo "============ !!!! No such stack exist !!!! ============"
                     
               fi
 
