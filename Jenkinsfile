@@ -6,9 +6,9 @@ pipeline {
               sh '''
                
               #!/bin/bash
-              aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE  --region us-east-1 > stacklist.json 
+              aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > stacklist.json 
               cat stacklist.json
-              jq ' .[].StackName' stacklist.json
+              jq 'length' stacklist.json
               
 
 
