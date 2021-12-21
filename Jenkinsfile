@@ -6,10 +6,9 @@ pipeline {
               sh '''
                
               #!/bin/bash
-              aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE  --region us-east-1 > stacklist 
-              cat stacklist
-              var=$(cat stacklist | jq '.[] | select (.[].StackName=="saad") | .[].StackName')
-              echo $var
+              aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE  --region us-east-1 > stacklist.json 
+              cat stacklist.json
+              jq 'length' stacklist.json
               
 
 
