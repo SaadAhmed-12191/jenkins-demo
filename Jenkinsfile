@@ -10,7 +10,7 @@ pipeline {
               if [[ "$action" == create ]]
                 then cat stacklist | grep "${stack_name}" && echo "stack already created" || echo "creating new stack"; aws cloudformation create-stack --stack-name $stack_name --region us-east-1 --template-body file://VPC.yaml --parameters ParameterKey=VpcCIDR,ParameterValue=$VpcCIDR 
                  aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > status
-                 eval $(awk '{print "var"NR"="$2}' status)
+                 eval $(awk '{print "var"NR"="$2}' status) $$ echo $14
                  
                
                     
