@@ -12,7 +12,7 @@ pipeline {
                 while [ ("$var" != '"CREATE_COMPLETE"') ]
                 do 
                  aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > status.json; var=$(cat status.json | jq '.Stacks | .[].StackStatus'); echo $var
-                 if [[ "$var" == ROLLBACK_IN_PROGRESS ]]
+                 if [[ "$var" == '"ROLLBACK_IN_PROGRESS"' ]]
                   echo "Stack has been rolled back"
                   break
                  fi
