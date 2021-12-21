@@ -10,7 +10,7 @@ pipeline {
               if [[ "$action" == create ]]
                 then [ cat stacklist | grep "${stack_name}" ] && echo "Creating Stack" || echo "============ !!!! stack already created !!!! ============"
                 aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > status.json; cat status.json ; var = $(cat status.json | jq '.Stacks | .[].StackStatus')
-                
+                echo $var
                     
                    
               elif [[ "$action" == delete ]]
