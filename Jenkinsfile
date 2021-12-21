@@ -16,7 +16,7 @@ pipeline {
                   then
                    echo "Stack has been rolled back"
                    break
-                 elif [ "$var" == '"ROLLBACK_IN_PROGRESS"' ]
+                 elif [ "$var" == '"CREATE_COMPLETE"' ]
                   then
                    echo "Stack has been created"
                  
