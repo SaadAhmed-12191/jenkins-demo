@@ -11,7 +11,7 @@ pipeline {
                 then [ cat stacklist | grep "${stack_name}" ] && echo "Creating Stack" || echo "============ !!!! stack already created !!!! ============"
                 while [ "$var" != "CREATE_COMPLETE"]
                 do 
-                 aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > status.json; cat status.json ; var=$(cat status.json | jq '.Stacks | .[].StackStatus'); echo $var 
+                 aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > status.json; cat status.json ; var=$(cat status.json | jq '.Stacks | .[].StackStatus'); echo "saad" 
                 done    
                    
               elif [[ "$action" == delete ]]
