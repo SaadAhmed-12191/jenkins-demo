@@ -13,10 +13,10 @@ pipeline {
                 do 
                  aws cloudformation describe-stacks --stack-name $stack_name --region us-east-1 > status.json; var=$(cat status.json | jq '.Stacks | .[].StackStatus'); echo $var
                  if [[ "$var" == '"ROLLBACK_IN_PROGRESS"' ]]
-                  echo "Stack has been rolled back"
-                  break
-                 else
-                  echo "going"
+                  then
+                   echo "Stack has been rolled back"
+                   break
+                 
                  fi
                 done
 
