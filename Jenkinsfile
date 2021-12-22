@@ -30,7 +30,7 @@ pipeline {
                     
                    done
                  fi
-              elif  [[ "$action" == create ]]
+              elif  [[ "$action" == delete ]]
                then
                 check=$(cat stacklist.json | jq -c -r --arg stack_name $stack_name '.[][] | select(.StackName==$stack_name)')
                  if [ "$check" != "" ]
