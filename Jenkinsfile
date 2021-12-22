@@ -10,7 +10,7 @@ pipeline {
               #cat status.json
               aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE  --region us-east-1  > stacklist.json 
               cat stacklist.json
-              var=$( | jq '.StackSummaries | jq .[] | select(.[].StackName=="saad") | .StackName' stacklist.json)
+              var=$( jq '.StackSummaries | jq .[] | select(.[].StackName=="saad") | .StackName' stacklist.json)
              
               echo $var
               #echo $var2
