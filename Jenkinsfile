@@ -12,10 +12,10 @@ pipeline {
               cat stacklist.json
               var=$(cat stacklist.json | jq -c '.[][] | select(.StackName | contains("saeed"))')
               if [ "$var" != "" ]
-               echo "saad"
-             else 
-
-              echo "ahmed"
+               then
+                echo "saad"
+              else echo "ahmed"
+              fi
               
 
 
