@@ -12,7 +12,7 @@ pipeline {
               cat stacklist.json
               var=$(cat stacklist.json | jq '.[] | .[].StackName')
               echo $var > saad
-              cat saad
+              jq 'length' saad
              
               echo $var
               #echo $var2
