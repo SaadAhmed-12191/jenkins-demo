@@ -13,7 +13,7 @@ pipeline {
               check=$(cat stacklist.json | jq -c -r --arg stack_name $stack_name '.[][] | select(.StackName==$stack_name)')
               if [ "$check" != "" ]
                then
-                echo "stack already created"
+                echo "===================== !!!!!! STACK ALREADY CREATED !!!!!! ====================="
               else  aws cloudformation create-stack --stack-name $stack_name --region us-east-1 --template-body file://VPC.yaml --parameters ParameterKey=VpcCIDR,ParameterValue=$VpcCIDR
                 while [ "$var" != '"CREATE_COMPLETE"' ]
                 do 
