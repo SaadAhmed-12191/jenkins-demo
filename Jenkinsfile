@@ -9,7 +9,7 @@ pipeline {
               
               echo $stack_name
               aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE  --region us-east-1  > stacklist.json 
-              cat stacklist.json
+              
               check=$(cat stacklist.json | jq -c -r --arg stack_name $stack_name '.[][] | select(.StackName==$stack_name)')
               if [ "$check" != "" ]
                then
